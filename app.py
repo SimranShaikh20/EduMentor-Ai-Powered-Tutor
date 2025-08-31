@@ -54,7 +54,7 @@ if api_key:
     # Sidebar for Additional Features
     st.sidebar.header('EduMentor: AI-Tutor')
     st.sidebar.image(logo,width=120)
-    st.sidebar.caption('Made by D')
+    st.sidebar.caption('Made by SimranShaikh20')
     # Adding a button in the sidebar to delete all files from the assistant
     if st.sidebar.button('Delete All Files from Assistant'):
         # Retrieve all file IDs associated with the assistant
