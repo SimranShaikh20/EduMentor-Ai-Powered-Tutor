@@ -13,183 +13,6 @@
 
 ---
 
-## 📊 Architecture Diagram Guide
-
-### 🎨 **How to Add Architecture Diagrams**
-
-#### **Option 1: Mermaid Diagrams (Recommended)**
-## 📊 System Architecture
-
-```mermaid
-graph TB
-    User[👤 User] --> UI[🖥️ Streamlit Interface]
-    UI --> API[🔑 API Gateway]
-    API --> Assistant[🤖 OpenAI Assistant]
-    Assistant --> RAG[🔍 RAG Engine]
-    RAG --> Vector[📊 Vector Database]
-```
-
-#### **Option 2: External Diagram Tools**
-- 🎨 **Draw.io**: Create detailed system architecture diagrams  
-- 📐 **Lucidchart**: Professional flowcharts and system designs  
-- 🖼️ **PlantUML**: Code-based diagram generation  
-- ⚡ **Excalidraw**: Hand-drawn style diagrams for informal documentation  
-
-#### **Option 3: Custom Images**
-<div align="center">
-    <img src="architecture_diagram.png" alt="System Architecture" width="800"/>
-    <p><em>Detailed system architecture and data flow</em></p>
-</div>
-
-```
-
-### 📝 **Diagram Best Practices**
-- **🎯 Clear Labels**: Use descriptive names for all components
-- **🔄 Flow Direction**: Show data flow with arrows and clear pathways
-- **🎨 Color Coding**: Use consistent colors for different layer types
-- **📱 Responsive Design**: Ensure diagrams are readable on all device sizes
-
-## 🏗️ System Architecture
-
-### 📐 **Architecture Diagram**
-
-```mermaid
-graph TB
-    subgraph "Client Layer"
-        UI[🖥️ Streamlit Web Interface]
-        Mobile[📱 Mobile Browser]
-        Desktop[💻 Desktop Browser]
-    end
-    
-    subgraph "Application Layer"
-        App[🎯 AI-Tutor Application]
-        Session[📝 Session Manager]
-        FileHandler[📁 File Processing Engine]
-    end
-    
-    subgraph "AI Processing Layer"
-        Assistant[🤖 OpenAI Assistant API]
-        RAG[🔍 RAG Engine]
-        Vector[📊 Vector Database]
-    end
-    
-    subgraph "Data Layer"
-        CourseFiles[📚 Course Materials]
-        QAHistory[💬 Q&A History]
-        UserData[👤 User Sessions]
-    end
-    
-    subgraph "External Services"
-        OpenAI[🧠 OpenAI Services]
-        StreamlitCloud[☁️ Streamlit Cloud]
-    end
-    
-    UI --> App
-    Mobile --> App
-    Desktop --> App
-    
-    App --> Session
-    App --> FileHandler
-    Session --> QAHistory
-    FileHandler --> CourseFiles
-    
-    App --> Assistant
-    Assistant --> RAG
-    RAG --> Vector
-    Vector --> CourseFiles
-    
-    Assistant --> OpenAI
-    App --> StreamlitCloud
-    
-    classDef client fill:#e1f5fe
-    classDef app fill:#f3e5f5
-    classDef ai fill:#e8f5e8
-    classDef data fill:#fff3e0
-    classDef external fill:#fce4ec
-    
-    class UI,Mobile,Desktop client
-    class App,Session,FileHandler app
-    class Assistant,RAG,Vector ai
-    class CourseFiles,QAHistory,UserData data
-    class OpenAI,StreamlitCloud external
-```
-
-### 🔧 **Component Architecture**
-
-| Layer | Components | Responsibility |
-|-------|------------|----------------|
-| **🎨 Presentation** | Streamlit UI, Mobile/Desktop Interface | User interaction and experience |
-| **⚙️ Application** | Session Manager, File Processor | Business logic and workflow management |
-| **🤖 AI Processing** | Assistant API, RAG Engine, Vector DB | Intelligent query processing and response generation |
-| **💾 Data** | Course Materials, Q&A History | Information storage and retrieval |
-| **🌐 External** | OpenAI Services, Cloud Hosting | Third-party integrations and infrastructure |
-
-### 🔄 **Data Flow Process**
-
-1. **📤 Upload Phase**: Course materials → File Processing → Vector Database
-2. **💭 Query Phase**: User Question → Assistant API → RAG Retrieval → Context Enhancement
-3. **🎯 Response Phase**: AI Processing → Course-Specific Answer → User Interface
-4. **💾 Storage Phase**: Q&A Interaction → Session History → Export Options
-
----
-
-## 🌍 Real-World Problems Solved
-
-### 🎯 **Educational Challenges Addressed**
-
-#### 📚 **1. Generic Tutoring Limitations**
-**Problem**: Traditional AI tutors provide generic responses that don't align with specific course curricula or professor expectations.
-
-**Solution**: AI-Tutor processes actual course materials, ensuring responses are perfectly aligned with your specific syllabus, textbooks, and course objectives.
-
-#### 🤖 **2. AI Hallucination in Education**
-**Problem**: Standard AI models often generate plausible-sounding but incorrect information, especially dangerous in educational contexts.
-
-**Solution**: RAG technology grounds every response in actual course materials, dramatically reducing misinformation and ensuring academic accuracy.
-
-#### 💰 **3. Expensive Private Tutoring**
-**Problem**: Quality personalized tutoring is often prohibitively expensive, creating educational inequality.
-
-**Solution**: AI-Tutor provides 24/7 personalized tutoring at a fraction of the cost, democratizing access to quality education support.
-
-#### ⏰ **4. Limited Tutoring Availability**
-**Problem**: Human tutors have limited availability, often conflicting with student schedules.
-
-**Solution**: Available 24/7 across all time zones, providing instant help whenever students need it most.
-
-#### 📖 **5. Course Material Overload**
-**Problem**: Students struggle to navigate vast amounts of course materials and extract relevant information quickly.
-
-**Solution**: AI-Tutor instantly searches through all uploaded materials to find and synthesize relevant information for any query.
-
-### 🎓 **Target Use Cases**
-
-#### **For Students:**
-- **📝 Homework Help**: Get explanations tailored to your specific course content
-- **🔍 Concept Clarification**: Understand difficult topics using your course materials as reference
-- **📚 Study Session Support**: Interactive review sessions based on your syllabus
-- **📋 Exam Preparation**: Practice questions and explanations from your course content
-
-#### **For Educators:**
-- **👥 Student Support**: Provide consistent, course-aligned assistance to students
-- **📊 Learning Analytics**: Track common questions and areas of difficulty
-- **⏱️ Time Efficiency**: Reduce repetitive question answering while maintaining quality support
-- **🔄 Curriculum Enhancement**: Identify knowledge gaps through student interaction patterns
-
-#### **For Institutions:**
-- **📈 Scalable Support**: Provide personalized tutoring to large student populations
-- **💡 Learning Innovation**: Enhance traditional education with AI-powered assistance
-- **📊 Data-Driven Insights**: Understand student learning patterns and challenges
-- **🎯 Resource Optimization**: Maximize educational impact with efficient resource allocation
-
-### 🌟 **Impact Metrics**
-
-- **⚡ Instant Access**: Immediate response to student queries vs. hours/days waiting for human tutors
-- **💵 Cost Reduction**: Up to 95% cost reduction compared to private tutoring services
-- **🎯 Accuracy Improvement**: RAG ensures 99%+ accuracy in course-specific responses
-- **📚 Material Utilization**: 100% of uploaded course content becomes searchable and interactive
-- **🔄 24/7 Availability**: Round-the-clock learning support for global accessibility
-
 ## 🌟 Overview
 
 **AI-Tutor** is a cutting-edge educational web application that seamlessly integrates OpenAI's latest Assistant API with **Retrieval-Augmented Generation (RAG)** technology. Our platform delivers personalized tutoring experiences across diverse academic courses, adapting intelligently to your specific course materials for a truly dynamic and responsive learning journey.
@@ -267,16 +90,185 @@ Our secret weapon for enhanced learning experiences:
 > Diverse data sources enable tailored responses for specific educational contexts and individual needs
 
 <div align="center">
-    <img src="images/method.png alt="AI-Tutor Methodology" width="600"/>
+    <img src="method.png" alt="AI-Tutor Methodology" width="600"/>
     <p><em>AI-Tutor's intelligent methodology workflow</em></p>
 </div>
+
+---
+
+## 🏗️ System Architecture
+
+### 📐 **Architecture Overview**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        CLIENT LAYER                             │
+├─────────────────┬─────────────────┬─────────────────────────────┤
+│   🖥️ Desktop    │   📱 Mobile     │   💻 Web Browser           │
+│    Browser      │    Browser      │    Interface               │
+└─────────────────┴─────────────────┴─────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    APPLICATION LAYER                            │
+├─────────────────────────────────────────────────────────────────┤
+│  🎯 AI-Tutor App  │  📝 Session Mgr  │  📁 File Processor      │
+└─────────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                   AI PROCESSING LAYER                           │
+├─────────────────────────────────────────────────────────────────┤
+│   🤖 OpenAI      │   🔍 RAG        │   📊 Vector              │
+│   Assistant API  │   Engine        │   Database               │
+└─────────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      DATA LAYER                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  📚 Course       │  💬 Q&A         │  👤 User                 │
+│  Materials       │  History        │  Sessions                │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**🔄 Data Flow Process:**
+```
+User Query → Streamlit UI → File Processing → Vector Search → RAG Retrieval → OpenAI Assistant → Contextualized Response → User Interface
+```
+
+### 🔧 **Component Architecture**
+
+| Layer | Components | Responsibility |
+|-------|------------|----------------|
+| **🎨 Presentation** | Streamlit UI, Mobile/Desktop Interface | User interaction and experience |
+| **⚙️ Application** | Session Manager, File Processor | Business logic and workflow management |
+| **🤖 AI Processing** | Assistant API, RAG Engine, Vector DB | Intelligent query processing and response generation |
+| **💾 Data** | Course Materials, Q&A History | Information storage and retrieval |
+| **🌐 External** | OpenAI Services, Cloud Hosting | Third-party integrations and infrastructure |
+
+### 🔄 **Detailed Data Flow Process**
+
+1. **📤 Upload Phase**: Course materials → File Processing → Vector Database
+2. **💭 Query Phase**: User Question → Assistant API → RAG Retrieval → Context Enhancement
+3. **🎯 Response Phase**: AI Processing → Course-Specific Answer → User Interface
+4. **💾 Storage Phase**: Q&A Interaction → Session History → Export Options
+
+---
+
+## 📊 How to Add Architecture Diagrams
+
+### 🎨 **Method 1: ASCII Art Diagrams (Always Works)**
+Create simple, effective diagrams using text characters that display perfectly in any README:
+
+```
+User Input → File Upload → Vector Processing → AI Query → Response Generation
+     ↓            ↓              ↓              ↓              ↓
+  📝 Query    📚 Materials   🔍 Indexing   🤖 Assistant   💬 Answer
+```
+
+### 🎨 **Method 2: Mermaid Diagrams** 
+For GitHub/GitLab repositories that support Mermaid rendering:
+
+````markdown
+```mermaid
+graph LR
+    A[User] --> B[Streamlit UI]
+    B --> C[OpenAI Assistant]
+    C --> D[RAG Engine]
+    D --> E[Course Materials]
+```
+````
+
+### 🎨 **Method 3: External Tools + Image**
+Create professional diagrams using:
+
+| Tool | Best For | Format |
+|------|----------|--------|
+| **🎨 Draw.io** | System architecture, flowcharts | PNG, SVG |
+| **📐 Lucidchart** | Professional documentation | PNG, PDF |
+| **🖼️ PlantUML** | Code-generated diagrams | PNG, SVG |
+| **⚡ Excalidraw** | Hand-drawn style sketches | PNG, SVG |
+
+Then embed in README:
+```markdown
+<div align="center">
+    <img src="docs/architecture.png" alt="System Architecture" width="800"/>
+    <p><em>AI-Tutor System Architecture</em></p>
+</div>
+```
+
+### 🎨 **Method 4: Interactive Diagrams**
+For web-based documentation, use:
+- **Miro** for collaborative diagrams
+- **Figma** for UI/UX architecture
+- **Canva** for presentation-style diagrams
+
+---
+
+## 🌍 Real-World Problems Solved
+
+### 🎯 **Educational Challenges Addressed**
+
+#### 📚 **1. Generic Tutoring Limitations**
+**Problem**: Traditional AI tutors provide generic responses that don't align with specific course curricula or professor expectations.
+
+**Solution**: AI-Tutor processes actual course materials, ensuring responses are perfectly aligned with your specific syllabus, textbooks, and course objectives.
+
+#### 🤖 **2. AI Hallucination in Education**
+**Problem**: Standard AI models often generate plausible-sounding but incorrect information, especially dangerous in educational contexts.
+
+**Solution**: RAG technology grounds every response in actual course materials, dramatically reducing misinformation and ensuring academic accuracy.
+
+#### 💰 **3. Expensive Private Tutoring**
+**Problem**: Quality personalized tutoring is often prohibitively expensive, creating educational inequality.
+
+**Solution**: AI-Tutor provides 24/7 personalized tutoring at a fraction of the cost, democratizing access to quality education support.
+
+#### ⏰ **4. Limited Tutoring Availability**
+**Problem**: Human tutors have limited availability, often conflicting with student schedules.
+
+**Solution**: Available 24/7 across all time zones, providing instant help whenever students need it most.
+
+#### 📖 **5. Course Material Overload**
+**Problem**: Students struggle to navigate vast amounts of course materials and extract relevant information quickly.
+
+**Solution**: AI-Tutor instantly searches through all uploaded materials to find and synthesize relevant information for any query.
+
+### 🎓 **Target Use Cases**
+
+#### **For Students:**
+- **📝 Homework Help**: Get explanations tailored to your specific course content
+- **🔍 Concept Clarification**: Understand difficult topics using your course materials as reference
+- **📚 Study Session Support**: Interactive review sessions based on your syllabus
+- **📋 Exam Preparation**: Practice questions and explanations from your course content
+
+#### **For Educators:**
+- **👥 Student Support**: Provide consistent, course-aligned assistance to students
+- **📊 Learning Analytics**: Track common questions and areas of difficulty
+- **⏱️ Time Efficiency**: Reduce repetitive question answering while maintaining quality support
+- **🔄 Curriculum Enhancement**: Identify knowledge gaps through student interaction patterns
+
+#### **For Institutions:**
+- **📈 Scalable Support**: Provide personalized tutoring to large student populations
+- **💡 Learning Innovation**: Enhance traditional education with AI-powered assistance
+- **📊 Data-Driven Insights**: Understand student learning patterns and challenges
+- **🎯 Resource Optimization**: Maximize educational impact with efficient resource allocation
+
+### 🌟 **Impact Metrics**
+
+- **⚡ Instant Access**: Immediate response to student queries vs. hours/days waiting for human tutors
+- **💵 Cost Reduction**: Up to 95% cost reduction compared to private tutoring services
+- **🎯 Accuracy Improvement**: RAG ensures 99%+ accuracy in course-specific responses
+- **📚 Material Utilization**: 100% of uploaded course content becomes searchable and interactive
+- **🔄 24/7 Availability**: Round-the-clock learning support for global accessibility
 
 ---
 
 ## 🖥️ Web Application Interface
 
 <div align="center">
-    <img src="images/web_app_view.png" alt="AI_Tutor Interface" width="700"/>
+    <img src="web_app_view.png" alt="AI_Tutor Interface" width="700"/>
     <p><em>Clean, intuitive interface designed for optimal learning</em></p>
 </div>
 
@@ -313,8 +305,6 @@ Interact with the AI assistant for course-specific queries
 
 ### **Step 5** 💾
 Download your complete Q&A session transcript in HTML format
-
----
 
 ---
 
