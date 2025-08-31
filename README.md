@@ -266,7 +266,7 @@ For web-based documentation, use:
 ## 🖥️ Web Application Interface
 
 <div align="center">
-    <img src="web_app_view.png" alt="AI_Tutor Interface" width="700"/>
+    <img src="images/web_app_view.png" alt="AI_Tutor Interface" width="700"/>
     <p><em>Clean, intuitive interface designed for optimal learning</em></p>
 </div>
 
