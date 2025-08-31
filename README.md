@@ -18,7 +18,8 @@
 ### 🎨 **How to Add Architecture Diagrams**
 
 #### **Option 1: Mermaid Diagrams (Recommended)**
-```markdown
+## 📊 System Architecture
+
 ```mermaid
 graph TB
     User[👤 User] --> UI[🖥️ Streamlit Interface]
@@ -26,7 +27,6 @@ graph TB
     API --> Assistant[🤖 OpenAI Assistant]
     Assistant --> RAG[🔍 RAG Engine]
     RAG --> Vector[📊 Vector Database]
-```
 ```
 
 #### **Option 2: External Diagram Tools**
