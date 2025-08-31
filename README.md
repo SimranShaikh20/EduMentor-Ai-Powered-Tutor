@@ -30,17 +30,17 @@ graph TB
 ```
 
 #### **Option 2: External Diagram Tools**
-- **🎨 Draw.io**: Create detailed system architecture diagrams
-- **📐 Lucidchart**: Professional flowcharts and system designs  
-- **🖼️ PlantUML**: Code-based diagram generation
-- **⚡ Excalidraw**: Hand-drawn style diagrams for informal documentation
+- 🎨 **Draw.io**: Create detailed system architecture diagrams  
+- 📐 **Lucidchart**: Professional flowcharts and system designs  
+- 🖼️ **PlantUML**: Code-based diagram generation  
+- ⚡ **Excalidraw**: Hand-drawn style diagrams for informal documentation  
 
 #### **Option 3: Custom Images**
-```markdown
 <div align="center">
     <img src="architecture_diagram.png" alt="System Architecture" width="800"/>
     <p><em>Detailed system architecture and data flow</em></p>
 </div>
+
 ```
 
 ### 📝 **Diagram Best Practices**
