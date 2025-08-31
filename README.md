@@ -188,13 +188,7 @@ Create professional diagrams using:
 | **🖼️ PlantUML** | Code-generated diagrams | PNG, SVG |
 | **⚡ Excalidraw** | Hand-drawn style sketches | PNG, SVG |
 
-Then embed in README:
-```markdown
-<div align="center">
-    <img src="docs/architecture.png" alt="System Architecture" width="800"/>
-    <p><em>AI-Tutor System Architecture</em></p>
-</div>
-```
+
 
 ### 🎨 **Method 4: Interactive Diagrams**
 For web-based documentation, use:
@@ -266,7 +260,7 @@ For web-based documentation, use:
 ## 🖥️ Web Application Interface
 
 <div align="center">
-    <img src="images/web_app_view.png" alt="AI_Tutor Interface" width="700"/>
+    <img src="images/main.png" alt="AI_Tutor Interface" width="700"/>
     <p><em>Clean, intuitive interface designed for optimal learning</em></p>
 </div>
 
