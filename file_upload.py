@@ -4,10 +4,10 @@ import os
 
 def upload_files_to_assistant(client, uploaded_files):
     file_ids = []
-    file_paths=[]
+    file_paths = []
     for uploaded_file in uploaded_files:
         if uploaded_file is not None:
-            file_path=os.path.join(os.getcwd(),uploaded_file.name)
+            file_path = os.path.join(os.getcwd(), uploaded_file.name)
             response = client.files.create(
                 file=uploaded_file,
                 purpose='assistants'
@@ -15,13 +15,14 @@ def upload_files_to_assistant(client, uploaded_files):
             file_ids.append(response.id)
             file_paths.append(file_path)
     print(file_paths)
-    return file_ids,file_paths
+    return file_ids, file_paths
+
 
 def attach_files_to_assistant(client, file_ids, assistant_id):
     attached_files = []
     for file_id in file_ids:
         assistant_file = client.beta.assistants.files.create(
-            assistant_id=assistant_id, 
+            assistant_id=assistant_id,
             file_id=file_id
         )
         attached_files.append(assistant_file)
@@ -29,18 +30,24 @@ def attach_files_to_assistant(client, file_ids, assistant_id):
 
 
 def check_and_upload_files(client, assistant_id):
-    
-    assistant_files = client.beta.assistants.files.list(assistant_id=assistant_id)
-    files_info = [file.id for file in assistant_files.data]
+    try:
+        # ✅ FIX: Safely list files for assistant
+        assistant_files = client.beta.assistants.files.list(assistant_id=assistant_id)
+        files_info = [file.id for file in getattr(assistant_files, "data", [])]
+    except Exception as e:
+        st.error(f"Error fetching assistant files: {e}")
+        files_info = []
+
     if not files_info:
         st.warning("No Files Included, Upload Educational Material")
-        uploaded_files = st.file_uploader("Choose PDF files", type="pdf", accept_multiple_files=True)
+        uploaded_files = st.file_uploader(
+            "Choose PDF files", type="pdf", accept_multiple_files=True
+        )
 
         if st.button("Upload and Attach Files"):
             if uploaded_files:
                 try:
-                    file_ids ,file_paths= upload_files_to_assistant(client, uploaded_files)
-                    
+                    file_ids, file_paths = upload_files_to_assistant(client, uploaded_files)
                     attached_files_info = attach_files_to_assistant(client, file_ids, assistant_id)
 
                     if not attached_files_info:
@@ -51,5 +58,5 @@ def check_and_upload_files(client, assistant_id):
                     st.error(f"An error occurred while attaching files: {e}")
             else:
                 st.warning("Please select at least one file to upload.")
-    
+
     return files_info
