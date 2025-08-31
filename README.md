@@ -168,14 +168,14 @@ User Input → File Upload → Vector Processing → AI Query → Response Gener
 ### 🎨 **Method 2: Mermaid Diagrams** 
 For GitHub/GitLab repositories that support Mermaid rendering:
 
-````markdown
 ```mermaid
-graph LR
-    A[User] --> B[Streamlit UI]
-    B --> C[OpenAI Assistant]
-    C --> D[RAG Engine]
-    D --> E[Course Materials]
-```
+graph TB
+    User[👤 User] --> UI[🖥️ Streamlit Interface]
+    UI --> API[🔑 API Gateway]
+    API --> Assistant[🤖 OpenAI Assistant]
+    Assistant --> RAG[🔍 RAG Engine]
+    RAG --> Vector[📊 Vector Database]
+
 ````
 
 ### 🎨 **Method 3: External Tools + Image**
