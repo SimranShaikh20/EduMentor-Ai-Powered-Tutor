@@ -15,7 +15,7 @@ from chat_gen import generate_html
 from file_upload import upload_files_to_assistant, attach_files_to_assistant, check_and_upload_files
 
 logo=Image.open('images/logo.png')
-sb_logo=Image.open('sb_logo.png')
+sb_logo=Image.open('images/sb_logo.png')
 
 
 c1, c2 = st.columns([0.9, 3.2])
