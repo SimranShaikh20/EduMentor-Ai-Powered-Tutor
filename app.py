@@ -14,7 +14,7 @@ from api_handler import send_query_get_response
 from chat_gen import generate_html
 from file_upload import upload_files_to_assistant, attach_files_to_assistant, check_and_upload_files
 
-logo=Image.open('logo.png')
+logo=Image.open('images/logo.png')
 sb_logo=Image.open('sb_logo.png')
 
 
