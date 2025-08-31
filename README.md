@@ -290,7 +290,7 @@ For web-based documentation, use:
 Follow these simple steps to begin your personalized learning journey:
 
 ### **Step 1** 🌐
-Access the [**AI-Tutor Streamlit App**](https://aitutor-gawywv3h6qfwzzvikfzkpl.streamlit.app/)
+Access the [**AI-Tutor**](https://edumentor-ai-powered-tutor.streamlit.app/)
 
 ### **Step 2** 🔑  
 Enter your OpenAI API Key securely
